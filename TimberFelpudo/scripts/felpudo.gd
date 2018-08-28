@@ -10,28 +10,33 @@ var lado
 const ESQ = -1
 const DIR = 1
 
-
 func _ready():
 	pass
-
+	
 func esq():
-	set_pos(Vector2(220,1070))
+	set_pos(Vector2(220, 1070))
 	idle.set_flip_h(false)
 	bate.set_flip_h(false)
 	
-	grave.set_pos(Vector2(-44,41))
+	grave.set_pos(Vector2(-44, 41))
 	grave.set_flip_h(true)
 	lado = ESQ
 
 func dir():
-	set_pos(Vector2(500,1070))
+	set_pos(Vector2(500, 1070))
 	idle.set_flip_h(true)
 	bate.set_flip_h(true)
 	
-	grave.set_pos(Vector2(28,41))
+	grave.set_pos(Vector2(28, 41))
 	grave.set_flip_h(false)
 	lado = DIR
 	
-	
 func bater():
 	anim.play("Bater")
+	
+func morrer():
+	anim.stop()
+	idle.hide()
+	bate.hide()
+	grave.show()
+
